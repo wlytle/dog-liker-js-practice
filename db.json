@@ -2,20 +2,22 @@
     "dogs": [
       {
         "id": 1,
-        "name": "Denver",
-        "breed": "Doberman",
-        "image_url": "",
+        "likes": 4,
+        "name": "Norma",
+        "breed": "Italian Greyhound",
+        "image_url": "https://3.bp.blogspot.com/-uCd3eT8_AgA/XCZ-qnZIbXI/AAAAAAAATgQ/G8t6mwyZeIwb9OtUd2tEuasstpXsJgWlQCLcBGAs/s1600/IMG_3613l.JPG",
         "comments": [
-            "a good dog", 
-            "she barked at me", 
-            "10/10"
+            "God's perfect idiot", 
+            "Everyone loves her", 
+            "I'm literally going to steal this dog"
         ]
       },
       {
         "id": 2,
+        "likes": 4,
         "name": "Reilly",
         "breed": "Husky",
-        "image_url": "",
+        "image_url": "https://s3.envato.com/files/247248172/siberian%20husky%20puppy23.jpg",
         "comments": [
             "crazy", 
             "enthusiastic",
@@ -24,9 +26,10 @@
       },
       {
         "id": 3,
+        "likes": 4,
         "name": "Corbin",
         "breed": "Great Dane",
-        "image_url": "",
+        "image_url": "https://i.pinimg.com/originals/63/84/6b/63846becf78f2ab4d001021eea6326b7.jpg",
         "comments": [
             "enormous", 
             "a love bug"
@@ -34,9 +37,10 @@
       },
       {
         "id": 4,
+        "likes": 4,
         "name": "Jake",
         "breed": "Tibetan Terrier",
-        "image_url": "",
+        "image_url": "https://cdn3-www.dogtime.com/assets/uploads/gallery/tibetan-terrier-dog-breed-pictures/10-2ndface.jpg",
         "comments": [
             "he howls so loud", 
             "very protective", 
@@ -45,18 +49,20 @@
       },
       {
         "id": 5,
+        "likes": 4,
         "name": "Penny",
         "breed": "Boston Terrier",
-        "image_url": "",
+        "image_url": "https://petsidi.com/wp-content/uploads/2018/08/boston-terrier-dog-sweater.jpg",
         "comments": [
             "she has beatuiful sweaters"
         ]
       },
       {
         "id": 6,
+        "likes": 4,
         "name": "Colonel Piebald",
         "breed": "English Bulldog",
-        "image_url": "",
+        "image_url": "http://www.bulldogpros.com/wp-content/uploads/2013/06/buffy-brindle-2.14.18.jpg",
         "comments": [
             "too fun", 
             "the dog version of a cowboy"
@@ -64,9 +70,10 @@
       },
       {
         "id": 7,
+        "likes": 4,
         "name": "Mr. Benjamin Snoot",
         "breed": "American Eskimo Dog",
-        "image_url": "",
+        "image_url": "https://vetstreet.brightspotcdn.com/dims4/default/b910089/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F11%2F3adc50a41a11e087a80050568d634f%2Ffile%2FAmercian-Eskimo-2-062311.jpg",
         "comments": [
             "a biter...", 
             "so cute", 
@@ -75,9 +82,10 @@
       },
       {
         "id": 8,
+        "likes": 4,
         "name": "Maize",
         "breed": "Chow Chow",
-        "image_url": "",
+        "image_url": "https://images-ra.adoptapet.com/seo/1/h/38_h.png",
         "comments": [
             "awwww", 
             "loves her family so much!", 
@@ -86,9 +94,10 @@
       },
       {
         "id": 9,
+        "likes": 4,
         "name": "Posner",
         "breed": "Labridoodle",
-        "image_url": "",
+        "image_url": "https://lewismanorlabradoodles.com/wp-content/uploads/2018/11/Lewis-Manor-Labradoodles-Abby-2016-laying.jpg",
         "comments": [
             "tall for a doodle", 
             "a smart boy"
@@ -96,9 +105,10 @@
       },
       {
         "id": 10,
+        "likes": 4,
         "name": "Opie",
         "breed": "Chiweenie",
-        "image_url": "",
+        "image_url": "https://66.media.tumblr.com/tumblr_nsg59zPRGN1uayzz1o1_1440100468_cover.png",
         "comments": [
             "just a fat lil meatball", 
             "opie dopie :D", 
