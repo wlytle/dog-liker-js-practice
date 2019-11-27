@@ -1,6 +1,6 @@
 # We need to build a Dog Liking website!
 
-This website should allow people to like pictures of dogs, submit new dogs, update dogs in both the front end and the back (persisting the data to the json file included). 
+This website should allow people to like pictures of dogs, comment on dogs, and submit new dogs in both the front end and the back (persisting the data to the json file included). 
 
 ## Setup
 
@@ -32,3 +32,12 @@ Once you can confirm that your server is hosting the data at http://localhost:30
             </form>
         </div>
 ```
+
+2. Allow site users to submit a comment that is persisted to the database and, once a successful response is received from the server, updates the DOM without a refresh needed
+
+3. Add functionality to the like button. You may handle this however you would like -- if you want to add a button for it, go for it! If you would prefer to have users click directly on the likes to increase them, that is acceptable. This should render *optimistically*, meaning that users can like the photo and see it on the DOM without waiting for a server response. 
+
+4. Add functionality for a __super like__. For this, you should add a button that instantly adds 10 likes to that dog's database entry. You can choose if you want it to render optimistically or pessimistically. 
+
+5. Add a form to the bottom of your html page which will allow users to add an entirely new dog to the database! For this particular deliverable, you are able to edit the HTML file directly *in combination with* adding event listeners and fetches into your javascript file handle the form submission. 
+
