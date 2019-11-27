@@ -15,7 +15,7 @@ Once you can confirm that your server is hosting the data at http://localhost:30
 1. Import all dogs in the database so that they load into the page. The structure for each dog should look like this once it is loaded into the HTML:
 ```html
     <div id='1'>
-            <p>Norma</p>
+            <h2>Norma</h2>
             <p>Italian Greyhound</p>
             <img src='https://3.bp.blogspot.com/-uCd3eT8_AgA/XCZ-qnZIbXI/AAAAAAAATgQ/G8t6mwyZeIwb9OtUd2tEuasstpXsJgWlQCLcBGAs/s1600/IMG_3613l.JPG'></img>
             <p>Likes: 15</p>
