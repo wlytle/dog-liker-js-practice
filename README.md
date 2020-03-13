@@ -39,5 +39,5 @@ Once you can confirm that your server is hosting the data at http://localhost:30
 
 4. Add functionality for a __super like__. For this, you should add a button that instantly adds 10 likes to that dog's database entry. You can choose if you want it to render optimistically or pessimistically. 
 
-5. Add a form to the bottom of your html page which will allow users to add an entirely new dog to the database! For this particular deliverable, you are able to edit the HTML file directly *in combination with* adding event listeners and fetches into your javascript file handle the form submission. 
+5. Add a form to the top of your html page which will allow users to add an entirely new dog to the database! For this particular deliverable, you are able to edit the HTML file directly *in combination with* adding event listeners and fetches into your javascript file handle the form submission. 
 
