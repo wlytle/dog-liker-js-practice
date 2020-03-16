@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const newDogForm = document.getElementsByTagName("form")[0]
 
     fetch(DOGSURL)
-    .then(res=>res.json())
-    .then(json=>{
-        populateDogs(json)
-    })
+        .then(res => res.json())
+        .then(json => {
+            populateDogs(json)
+        })
 
     const populateDogs = (dogs) => {
-        dogs.forEach(dog=> {
+        dogs.forEach(dog => {
             addDogToPage(dog)
         })
         let formHeader = document.createElement('h2')
@@ -20,30 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
         labelN.innerText = "Name: "
         let nameField = document.createElement('input')
         nameField.name = "dogName"
+        nameField.id = "dogName"
         newDogForm.appendChild(labelN)
         newDogForm.appendChild(nameField)
         let labelB = document.createElement('label')
         labelB.innerText = "Breed: "
         let breedField = document.createElement('input')
-        breedField.name = "breed"
+        breedField.name = "breed"        
+        breedField.id = "breed"
         newDogForm.appendChild(labelB)
         newDogForm.appendChild(breedField)
         let labelI = document.createElement('label')
         labelI.innerText = "Image URL: "
         let urlField = document.createElement('input')
         urlField.name = "image"
+        urlField.id = "image"
         newDogForm.appendChild(labelI)
         newDogForm.appendChild(urlField)
         let newDogSubmit = document.createElement('button')
         newDogSubmit.type = 'submit'
         newDogSubmit.innerText = 'Save Doggo'
         newDogForm.appendChild(newDogSubmit)
-        newDogForm.addEventListener('submit', (event)=> {addDoggo(event)})
+        newDogForm.addEventListener('submit', (event) => { addDoggo(event) })
     }
-    
+
     const submitComment = (event, dog) => {
         event.preventDefault()
-        let postData = {comments: [...dog.comments, event.target.comment.value]}
+        let postData = { comments: [...dog.comments, event.target.comment.value] }
         console.log(postData)
         fetch(`${DOGSURL}/${dog.id}`, {
             method: 'PATCH',
@@ -53,24 +56,24 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(postData)
         })
-        .then(res=>res.json())
-        .then(json=> {
-            let ul = document.getElementById(`${json.name}-comments`)
-            console.log(ul)
-            let li = document.createElement('li') 
-            li.innerText = json.comments[json.comments.length-1]
-            ul.appendChild(li)
-        })  
+            .then(res => res.json())
+            .then(json => {
+                let ul = document.getElementById(`${json.name}-comments`)
+                console.log(ul)
+                let li = document.createElement('li')
+                li.innerText = json.comments[json.comments.length - 1]
+                ul.appendChild(li)
+            })
     }
 
-    const upvoteDoggo = (dog, superLike=false) => {
-        let p = document.getElementById(`${dog.name}-likes`)
-        let postData
-        if(superLike){
-            postData = {likes: parseInt(p.innerText)+10}
+    const upvoteDoggo = (dog, superLike = false) => {
+        let p = document.getElementById(`${dog.name}-likes`);
+        let postData;
+        if (superLike) {
+            postData = { likes: parseInt(p.innerText) + 10 };
         }
-        else postData = {likes: parseInt(p.innerText)+1}
-        
+        else postData = { likes: parseInt(p.innerText) + 1 }
+
         fetch(`${DOGSURL}/${dog.id}`, {
             method: 'PATCH',
             headers: {
@@ -79,15 +82,21 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(postData)
         })
-        .then(res=>res.json())
-        .then(json=> {
-            p.innerText = json.likes
-        })  
+            .then(res => res.json())
+            .then(json => {
+                p.innerText = json.likes
+            })
     }
 
     const addDoggo = (event) => {
         event.preventDefault()
-        let postData = {likes: 0, name: event.target.children.dogName.value, breed: event.target.children.breed.value, image: event.target.children.image.value, comments: []}
+        let postData = { 
+            likes: 0, 
+            name: event.target.dogName.value, 
+            breed: event.target.breed.value, 
+            image: event.target.image.value, 
+            comments: [] 
+        }
         fetch(DOGSURL, {
             method: 'POST',
             headers: {
@@ -96,10 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(postData)
         })
-        .then(res=>res.json())
-        .then(json=> {
-            addDogToPage(json)
-        })  
+            .then(res => res.json())
+            .then(json => {
+                addDogToPage(json)
+            })
     }
 
     const addDogToPage = (dog) => {
@@ -118,19 +127,26 @@ document.addEventListener("DOMContentLoaded", () => {
         likesLabel.innerText = "Likes:"
         let btn = document.createElement('button')
         btn.innerText = "like this doggo"
-        btn.addEventListener('click', ()=>upvoteDoggo(dog))
+        btn.addEventListener('click', () => upvoteDoggo(dog))
         let superBtn = document.createElement('button')
         superBtn.innerText = "Super Like"
-        superBtn.addEventListener('click', ()=>upvoteDoggo(dog, true))
+        superBtn.addEventListener('click', () => upvoteDoggo(dog, true))
         let p3 = document.createElement('p')
         p3.innerText = "Comments:"
         let ul = document.createElement('ul')
         ul.id = `${dog.name}-comments`
-        dog.comments.forEach(comment=> {
-            let li = document.createElement('li')
-            li.innerText = comment
-            ul.appendChild(li)
-        })
+        if(dog.comments.length){
+            dog.comments.forEach(comment => {
+                let li = document.createElement('li')
+                li.innerText = comment
+                ul.appendChild(li)
+            })
+        }
+        else {
+            let noneYet = document.createElement('p')
+            noneYet.innerText = "None Yet!"
+            ul.appendChild(noneYet)
+        }
         let commentForm = document.createElement('form')
         let label = document.createElement('label')
         label.innerText = "Add Comment:"
@@ -140,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
         input1.name = "comment"
         let input2 = document.createElement('input')
         input2.type = 'submit'
-        
-        commentForm.addEventListener('submit', (ev)=> submitComment(ev, dog))
+
+        commentForm.addEventListener('submit', (ev) => submitComment(ev, dog))
         commentForm.appendChild(label)
         commentForm.appendChild(input1)
         commentForm.appendChild(input2)
@@ -158,5 +174,5 @@ document.addEventListener("DOMContentLoaded", () => {
         div.appendChild(commentForm)
         main.appendChild(div)
     }
-    
+
 })

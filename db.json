@@ -2,23 +2,14 @@
   "dogs": [
     {
       "id": 1,
-      "likes": 57,
+      "likes": 81,
       "name": "Norma",
       "breed": "Italian Greyhound",
       "image": "https://3.bp.blogspot.com/-uCd3eT8_AgA/XCZ-qnZIbXI/AAAAAAAATgQ/G8t6mwyZeIwb9OtUd2tEuasstpXsJgWlQCLcBGAs/s1600/IMG_3613l.JPG",
       "comments": [
         "God's perfect idiot",
         "Everyone loves her",
-        "I'm literally going to steal this dog",
-        "what a beautiful specimen",
-        "runs at the speed of nervous",
-        "an angel",
-        "Never done anything wrong in her life",
-        "Would protec",
-        "100000/10",
-        "Most fashionable animal alive",
-        "I heard she did a photoshoot at Zulily",
-        "Every household needs one"
+        "I'm literally going to steal this dog"
       ]
     },
     {
@@ -134,6 +125,14 @@
         "a very good dog"
       ],
       "id": 11
+    },
+    {
+      "likes": 1,
+      "name": "yoda",
+      "breed": "baby",
+      "image": "https://media.gq.com/photos/5ddd59ff5bb28e00087a9df6/4:3/w_1671,h_1253,c_limit/baby-yoda-explainer-gq-november-2019-112619.jpg",
+      "comments": [],
+      "id": 12
     }
   ]
 }
