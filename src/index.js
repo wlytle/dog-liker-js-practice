@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const DOGSURL = "http://localhost:3000/dogs";
   const main = document.querySelector("main");
+  const form = document.getElementById("new-dog");
 
   //Get all the dogs
   function getAllDogs() {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     breedP.textContent = breed;
     img.src = image;
     likesP.textContent = `Likes: ${likes}`;
+    likesP.className = "likes";
     likeBtn.textContent = "Like!";
     likeBtn.className = "like";
     superLikBtn.textContent = "SUPER LIKE!";
@@ -63,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
     main.appendChild(div);
   }
 
-  function renderComments(comments) {
-    const ul = document.createElement("ul");
+  function renderComments(comments, ul = null) {
+    ul = ul || document.createElement("ul");
     comments.forEach((comment) => {
       const li = document.createElement("li");
       li.textContent = comment;
@@ -84,16 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return resp.json();
       })
       .then((dog) => {
-        console.log("first dog fetch", dog);
         dog.comments.push(e.target.comment.value);
         testDog = dog.comments;
-        console.log("testDog", testDog);
-        console.log("dog with updated comments", dog.comments);
 
         fetch(DOGSURL + "/" + id, {
           method: "PATCH",
           headers: {
-            "Content-Type": "application.json",
+            "Content-Type": "application/json",
             Accept: "application/json",
           },
           body: JSON.stringify({ comments: testDog }),
@@ -102,16 +101,78 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Second response", resp);
             return resp.json();
           })
-          .then((dog) => console.log(dog))
+          .then((dog) => {
+            updateComments(dog);
+          })
           .catch((err) => console.log(err.message));
       });
   }
+
+  function updateComments(dog) {
+    const comments = document.getElementById(dog.id).querySelector("ul");
+    comments.innerHTML = "";
+    renderComments(dog.comments, comments);
+  }
   //add functionality to increase likes optimisitically
 
+  function addLike({ target }) {
+    const id = target.parentNode.id;
+    const likesP = target.parentNode.querySelector(".likes");
+    likes = +likesP.innerText.match(/\d+/)[0];
+    switch (target.className) {
+      case "like":
+        ++likes;
+        break;
+      case "super-like":
+        likes += 10;
+        break;
+      default:
+        return;
+    }
+    configObj = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ likes }),
+    };
+    fetch(DOGSURL + "/" + id, configObj)
+      .then((resp) => resp.json())
+      .then(() => {
+        likesP.innerText = `Likes: ${likes}`;
+      });
+  }
   //add super like button likes += 10, dealers choice on rendering
 
   //add form to html that allows a new dog to be created
+  function addDog(e) {
+    e.preventDefault();
+    let target = e.target;
+    const newDog = {
+      likes: 0,
+      name: target.name.value,
+      breed: target.breed.value,
+      image: target.image.value,
+      comments: [],
+    };
+    const configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(newDog),
+    };
+    console.log(configObj);
+    fetch(DOGSURL, configObj)
+      .then((resp) => resp.json())
+      .then((dog) => renderDog(dog))
+      .catch((er) => console.log(er.message));
+  }
 
   main.addEventListener("submit", addComment);
+  main.addEventListener("click", addLike);
+  form.addEventListener("submit", addDog);
   getAllDogs();
 });

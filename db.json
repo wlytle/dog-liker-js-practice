@@ -2,19 +2,21 @@
   "dogs": [
     {
       "id": 1,
-      "likes": 4,
+      "likes": 9,
       "name": "Norma",
       "breed": "Italian Greyhound",
       "image": "https://3.bp.blogspot.com/-uCd3eT8_AgA/XCZ-qnZIbXI/AAAAAAAATgQ/G8t6mwyZeIwb9OtUd2tEuasstpXsJgWlQCLcBGAs/s1600/IMG_3613l.JPG",
       "comments": [
         "God's perfect idiot",
         "Everyone loves her",
-        "I'm literally going to steal this dog"
+        "I'm literally going to steal this dog",
+        "LOUD COMMENT",
+        "ugh"
       ]
     },
     {
       "id": 2,
-      "likes": 4,
+      "likes": 6,
       "name": "Reilly",
       "breed": "Husky",
       "image": "https://s3.envato.com/files/247248172/siberian%20husky%20puppy23.jpg",
@@ -32,7 +34,8 @@
       "image": "https://i.pinimg.com/originals/63/84/6b/63846becf78f2ab4d001021eea6326b7.jpg",
       "comments": [
         "enormous",
-        "a love bug"
+        "a love bug",
+        "Best Ears!"
       ]
     },
     {
@@ -65,12 +68,13 @@
       "image": "http://www.bulldogpros.com/wp-content/uploads/2013/06/buffy-brindle-2.14.18.jpg",
       "comments": [
         "too fun",
-        "the dog version of a cowboy"
+        "the dog version of a cowboy",
+        "No picture :("
       ]
     },
     {
       "id": 7,
-      "likes": 4,
+      "likes": 17,
       "name": "Mr. Benjamin Snoot",
       "breed": "American Eskimo Dog",
       "image": "https://vetstreet.brightspotcdn.com/dims4/default/b910089/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F11%2F3adc50a41a11e087a80050568d634f%2Ffile%2FAmercian-Eskimo-2-062311.jpg",
@@ -100,7 +104,8 @@
       "image": "https://lewismanorlabradoodles.com/wp-content/uploads/2018/11/Lewis-Manor-Labradoodles-Abby-2016-laying.jpg",
       "comments": [
         "tall for a doodle",
-        "a smart boy"
+        "a smart boy",
+        "puppy"
       ]
     },
     {
@@ -114,6 +119,24 @@
         "opie dopie :D",
         "10,000 stars"
       ]
+    },
+    {
+      "likes": 0,
+      "name": "dasfasf",
+      "breed": "fadsfas",
+      "image": "fadsfas",
+      "comments": [],
+      "id": 11
+    },
+    {
+      "likes": 30,
+      "name": "Squirrel",
+      "breed": "Squirrle",
+      "image": "https://i.guim.co.uk/img/media/3aa0344c8039b86f4f7bd3981ae81d54dc985119/0_137_2741_1644/master/2741.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0b1438ff3a12dbf0c67371882fab4995",
+      "comments": [
+        "Good Dog!"
+      ],
+      "id": 12
     }
   ]
 }
